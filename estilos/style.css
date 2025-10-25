@@ -1,0 +1,311 @@
+@charset "UTF-8";
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+@keyframes fadeup{
+    from{
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+header, section#combos, section#porcoes, section#lanchesEporcoes, .pagamento{
+    animation: fadeup 0.8s ease forwards;
+    opacity: 0;
+}
+
+
+body{
+    overflow-x: hidden;
+}
+header{
+    background-image: linear-gradient(to right,#ffbc40 50%, #fc9a38 50%);
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+header a{
+    text-decoration: none;
+}
+
+header h1{
+    margin: 10px 0px;
+    text-align: center;
+    font-weight: 300;
+    font-size: 2rem;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+header img#logo{
+    border-radius: 10px;
+    box-shadow: 4px 2px 2px rgba(0, 0, 0, 0.199);
+    margin-bottom: 10px;
+    min-width: 100px;
+}
+
+
+header div.contatos{
+    padding: 10px;
+    background-color: transparent;
+}
+header img.social{
+    margin: 0px 5px;
+}
+header address{
+    font-style: normal;
+    text-align: center;
+    padding: 0px 5px;
+}
+
+main{
+    background-color: #fc9a38;
+    border-top: 2px solid rgba(0, 0, 0, 0.589);
+    padding-bottom: 20px;
+}
+
+main h1{
+    display: block;
+    margin: 10px auto;
+    text-align: center;
+    font-weight: 400;
+    font-style: italic;
+}
+
+main h2, main h3{
+    text-indent: 15px;
+    font-weight: 300;
+    color: white;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.582);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin:10px 0px;
+}
+
+main h3{
+    text-align: center;
+}
+
+main img{
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    border: 1px solid black;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.603);
+}
+
+
+section#porcoes, section#combos, section#lanchesEporcoes{
+    display: grid;
+    grid-template: 1fr/ 1fr;
+    gap: 5px;
+}
+
+
+section#porcoes h2{
+    text-align: left;
+}
+
+div.box-porcoes{
+    background-image: linear-gradient(to top, #fc9a38, #ffbc40);
+    min-width: 200px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.425);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+div.box-porcoes:hover{
+    transform: translateY(-3px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.473);
+    cursor: pointer;
+}
+
+div.box-porcoes div.imagem{
+    margin-top: 20px;
+}
+div.box-porcoes div.imagem img{
+    padding: 10px;
+    display: block;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.363);
+}
+
+div.box-porcoes div.imagem img#minguante{
+    background-color: #ff92267e;
+}
+
+
+
+span.precos{
+    background-color: rgba(0, 0, 0, 0.493);
+    font-size: 1.2rem;
+    color: white;
+    padding: 10px;
+    display: block;
+    margin: auto;
+    width: 100px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+span.precos:hover{
+    background-color: rgba(0, 0, 0, 0.541);
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.507);
+    transform: scale(1.1);
+    transition: transform 0.7s ease;
+    cursor: pointer;
+}
+
+div.box-porcoes ul{
+    display: block;
+    margin: auto;
+    list-style-type: none;
+    text-align: center;
+}
+
+div.box-porcoes li{
+    text-align: justify;
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+a.botao-pedido{
+    display: block;
+    text-align: center;
+    background-color: #25d366;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 10px auto 6px auto;
+    width: 80%;
+    max-width: 220px;
+    padding: 10px;
+    border-radius: 5px;
+    transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+
+
+a.botao-pedido:hover{
+    background-color: #19b954;
+    transform: translateY(-3px);
+    cursor: pointer;
+}
+.pagamento{
+    background-color: #ffbc40;
+    padding: 20px;
+    margin: 16px 10px;
+    border-top: 2px solid black;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.pagamento ul {list-style: none; margin-top: 12px;}
+.pagamento li {margin: 6px 0px; font-weight: bold; color: #222;}
+
+.pix-actions { margin-top: 10px; display: flex; gap: 8px; justify-content: center; align-items: center; }
+.btn-copiar {
+  background-color: #222;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+.copiado-msg {
+  margin-left: 8px;
+  color: green;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+/* observação pagamento */
+.obs-pagamento { 
+    margin-top: 8px; 
+    font-size: 1rem; 
+    color: rgb(255, 0, 0);
+}
+
+
+footer{
+    background-color: rgba(255, 68, 0, 0.76);
+    text-align: center;
+    color: white;
+    font-size: 1rem;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.473);
+    padding: 7px;
+}
+
+@media screen and (min-width:750px){
+    header img.social{
+        width: 35px;
+    }
+    section#porcoes{
+        display: grid;
+        grid-template: 1fr/ 1fr 1fr 1fr;
+        gap: 10px;
+        background-color: #fc9a38;
+    }
+
+    section#combos{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 25px;
+    }
+
+    section#combos div.box-porcoes{
+        flex-basis: 400px;
+        height: 500px;
+    }
+
+
+
+    section#lanchesEporcoes{
+        display: flex;
+        margin: auto;
+    }
+
+    div.box-porcoes{
+        border-radius: 5px;
+        box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.479);
+    }
+
+    div.box-porcoes li{
+        text-align: center;
+        display: inline-block;
+        margin-left: 5px;
+    }
+
+    main{
+        padding: 20px;
+    }
+    .pagamento{
+        width: 50%;
+        display: block;
+        margin: 20px auto;
+        border: 2px solid rgba(0, 0, 0, 0.459);
+    }
+    footer{
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width:300px){
+    header img#logo{
+        width: 200px;
+    }
+}
